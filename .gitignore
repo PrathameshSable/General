@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Generated deliverables (regenerate per engagement)
+outputs/*.docx
+outputs/*.xlsx
+outputs/*.pptx
+outputs/*.png
+outputs/*.svg
+outputs/diagrams/
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
