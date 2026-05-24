@@ -1,0 +1,26 @@
+{
+  "name": "clone-agent",
+  "version": "0.1.0",
+  "description": "Personal assistant agent built on the Claude Agent SDK",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "cli": "tsx src/cli.ts",
+    "ask": "tsx src/run.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
