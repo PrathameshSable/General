@@ -29,6 +29,10 @@ Use it *before* the document agents to settle target architecture and capacity, 
 / deck agents. It triggers on prompts such as "design the target architecture", "lakehouse or warehouse", "size the
 capacity", "well-architected review" or "write an ADR". Reference files live under `references/`.
 
+The same skill is mirrored at `.github/skills/fabric-cloud-solution-architect/` so GitHub Copilot (coding agent and
+VS Code agent mode) picks it up using the same layout as the Microsoft skills repo. The two copies are identical; edit
+`.claude/skills/...` and re-copy to `.github/skills/...` to keep them in sync.
+
 ## How to use
 
 ### One-shot pipeline (slash command)
