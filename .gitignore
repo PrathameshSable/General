@@ -17,3 +17,6 @@ outputs/diagrams/
 *.swp
 .idea/
 .vscode/
+
+# Local notebook test lakehouse (scripts/run_notebook_local.py)
+outputs/fake_lakehouse/

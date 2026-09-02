@@ -33,12 +33,20 @@ Tracks:
 
 Invoke any agent directly with a brief; chain outputs manually for finer control.
 
+## Fabric notebooks: Lakehouse profiling → star schema → semantic model
+
+`notebooks/` holds a five-step Fabric notebook pipeline that profiles an unfamiliar Lakehouse, proposes a dimensional
+(dim/fact) logical model from the profile, builds the gold star schema as Delta tables, and creates a Direct Lake semantic
+model from it with Semantic Link Labs. Use it in the assessment phase to understand client data quickly, and in delivery as
+the first cut of the gold layer. See [`notebooks/README.md`](notebooks/README.md).
+
 ## Directory layout
 
 ```
 .claude/
   agents/                  # Agent definitions (system prompts + tools)
   commands/                # Slash commands (orchestration)
+notebooks/                 # Fabric notebooks: profiling → logical model → gold dim/fact → semantic model
 scripts/                   # Python helpers (DOCX/XLSX/PPTX builders, diagram rendering)
 templates/                 # Extracted reference structures from real SOWs/plans
 examples/                  # Sample briefs to test the pipeline

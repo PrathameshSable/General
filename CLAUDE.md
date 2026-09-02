@@ -52,6 +52,16 @@ All generated artifacts go to `outputs/`:
 
 `outputs/` is gitignored — these are per-engagement artifacts, not source.
 
+## Fabric notebooks (`notebooks/`)
+
+A parameter-driven Fabric notebook pipeline that is independent of the SOW agents:
+`01_lakehouse_data_profiling` → `02_logical_model_design` → `03_build_dim_fact_model` → `04_semantic_model_deploy`
+(plus `00_generate_sample_data` and `05_run_pipeline`). It profiles every Delta table in a Lakehouse, proposes a
+star-schema logical model (`Files/model/model_spec.json`), builds `gold.dim_*` / `gold.fact_*` tables, and creates a
+Direct Lake semantic model with Semantic Link Labs. Details and design decisions are in `notebooks/README.md`.
+When editing these notebooks, keep every notebook runnable from its tagged `parameters` cell and keep notebooks 01–03
+free of Fabric-only dependencies (they are tested locally on PySpark + Delta).
+
 ## Tools the agents use
 
 - **python-docx** — DOCX generation
