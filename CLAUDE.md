@@ -52,6 +52,12 @@ All generated artifacts go to `outputs/`:
 
 `outputs/` is gitignored — these are per-engagement artifacts, not source.
 
+## Fabric notebooks
+
+`notebooks/semantic_model_recommender.ipynb` profiles a lakehouse, asks an LLM (Fabric's built-in
+Azure OpenAI, your own Azure OpenAI, or Claude) for a star-schema recommendation, and generates /
+deploys a Direct Lake semantic model as TMDL. See `notebooks/README.md`.
+
 ## Tools the agents use
 
 - **python-docx** — DOCX generation
