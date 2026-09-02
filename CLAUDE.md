@@ -13,6 +13,14 @@ This repo is a **Claude Code agent team** that operates as a presales technical 
 
 See `.claude/agents/*.md` for full agent definitions.
 
+## The architect skill
+
+| Skill | Role |
+|---|---|
+| `fabric-cloud-solution-architect` | Turns Claude into a Fabric Cloud Solution Architect (modelled on Microsoft's `cloud-solution-architect` skill): architecture styles, design patterns, Lakehouse/Warehouse/Eventhouse/Mirroring choices, F-SKU capacity sizing, Well-Architected review, ADRs |
+
+Defined in `.claude/skills/fabric-cloud-solution-architect/SKILL.md` with detailed tables under `references/`. Use it **before** the document agents to settle target architecture and capacity; its Step 9 hand-off summary is the input the SOW / WBS / deck agents expect. It follows the same source-of-truth rule as the agents.
+
 ## How to invoke
 
 **Pipeline (recommended):**
@@ -21,6 +29,8 @@ See `.claude/agents/*.md` for full agent definitions.
 ```
 
 **Individual agents:** Just describe what you need ("draft an assessment SOW for this client…") and Claude will route to the right agent.
+
+**Architecture first:** "design the target Fabric architecture for this brief", "lakehouse or warehouse for Gold?", "size the capacity", "run a well-architected review" → loads the `fabric-cloud-solution-architect` skill.
 
 ## Critical references
 

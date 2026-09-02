@@ -16,6 +16,19 @@ All four agents:
 - Use **real client SOW templates** in `templates/` as their structural reference (extracted from 6 SOWs and 4 project plans).
 - Can produce **architecture diagrams** and **process flows** using Mermaid (rendered to PNG and embedded in deliverables).
 
+## The architect skill
+
+`.claude/skills/fabric-cloud-solution-architect/` is a Claude Code skill modelled on Microsoft's
+[`cloud-solution-architect`](https://github.com/microsoft/skills/blob/main/.github/skills/cloud-solution-architect/SKILL.md)
+skill, specialised for Microsoft Fabric. It turns Claude into a Fabric Cloud Solution Architect: design principles,
+six Fabric architecture styles, 36 Fabric design patterns mapped to Well-Architected pillars, technology-choice tables
+(Lakehouse vs Warehouse vs Eventhouse vs Mirroring, ingestion, serving, CI/CD, networking), an F-SKU capacity sizing
+method, antipatterns, a WAF review checklist and an ADR template.
+
+Use it *before* the document agents to settle target architecture and capacity, then hand the decisions to the SOW / WBS
+/ deck agents. It triggers on prompts such as "design the target architecture", "lakehouse or warehouse", "size the
+capacity", "well-architected review" or "write an ADR". Reference files live under `references/`.
+
 ## How to use
 
 ### One-shot pipeline (slash command)
@@ -39,6 +52,7 @@ Invoke any agent directly with a brief; chain outputs manually for finer control
 .claude/
   agents/                  # Agent definitions (system prompts + tools)
   commands/                # Slash commands (orchestration)
+  skills/                  # Skills (fabric-cloud-solution-architect + references/)
 scripts/                   # Python helpers (DOCX/XLSX/PPTX builders, diagram rendering)
 templates/                 # Extracted reference structures from real SOWs/plans
 examples/                  # Sample briefs to test the pipeline
